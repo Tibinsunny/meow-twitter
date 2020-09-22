@@ -12,7 +12,7 @@ function App() {
   return (
     <form>
       <center><h1>Welcome To Mewo😺😺😺</h1>
-      <textarea className="input-area" name="mew-area" onChange={event => setMeowInput(event.target.value)}></textarea><br></br>
+      <textarea placeholder="Enter the Mewo" className="input-area" name="mew-area" onChange={event => setMeowInput(event.target.value)}></textarea><br></br>
       <Button type='submit' onClick={handleClick}>Submit</Button></center>
     </form>
   );

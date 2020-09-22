@@ -37,6 +37,9 @@
   }
 }
 .input-area{
-  height:60%;
   width:30%;
+}
+textarea {
+
+  height: 150px;
 }
