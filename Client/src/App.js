@@ -10,6 +10,8 @@ function App() {
 
   const [meowJson, setMeowJson] = useState([]);
   const [warning, setWarning] = useState(0);
+  const [test, setTest] = useState(false);
+  const [test1, setTest1] = useState(0);
   
   // useEffect(async() => {
   //  await fetch('http://127.0.0.1:8000')
@@ -41,9 +43,12 @@ function App() {
         'Content-Type': 'application/json;charset=utf-8'
       },
       body: JSON.stringify(dataMain)
-    }).then(response => (response.json())).then(result => setWarning(result.response))
-    
-   console.log(warning)
+    }).then(response => (response.json())).then(result => setTest1(result.response))
+    if(setTest1!=0)
+    {
+     setTest(true) 
+    }
+
       fetch(
           'http://127.0.0.1:8000',
         ).then(response => response.json()).then((data)=> setMeowJson(data));
@@ -54,8 +59,8 @@ function App() {
   }
   return (
     <div>
-       <Alert variant="danger">
-  <center>{warning}</center>
+       <Alert style={{ display: (test ? 'block' : 'none') }} variant="danger">
+  <center>{test1}</center>
   </Alert>
     <form>
       <center><h1>Welcome To Mewo😺😺😺</h1>
