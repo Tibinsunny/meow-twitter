@@ -14,20 +14,20 @@ app.get('/',(req,res) => {
 
 function checkInput(newMew)
 {
-return newMew.toString().trim()!== ''
+return (newMew.toString()!== '' && newMew.length>10)
 }
 
 app.post('/',(req,res) => {
     const mew=req.body.mew;
     if(checkInput(mew))
     {
-        users.insert({ mewContent:mew}).then(result => {
+        users.insert({ mewContent:mew,date:new Date()}).then(result => {
             res.json({response:"Updated"})
         })
     }
     else
     {
-        res.json({response:"Something Went Worong"})
+        res.json({response:"Should Contain Letters B/W"})
     }
   
     })

@@ -43,3 +43,9 @@ textarea {
 
   height: 150px;
 }
+.newContent{
+  background: hsl(0, 0%, 95%);
+  padding: 12px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
